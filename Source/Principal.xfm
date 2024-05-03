@@ -1,0 +1,18 @@
+METHOD CreateForm( lCreate ) CLASS TPrincipal
+
+   IF lCreate
+      ::SetBounds( 580, 173, 450, 300 )
+      ::SetClientSize( 434, 261 )
+      ::cText := "Principal"
+      ::Create()
+   ENDIF
+   ::Super:CreateForm( .F. )
+
+   WITH OBJECT ::oButton1 := TButton():New( Self )
+      :SetBounds( 144, 64, 122, 82 )
+      :cText := "Button1"
+      :OnClick := "ButtonOnClick"
+      :Create()
+   END
+
+RETURN Self

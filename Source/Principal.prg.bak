@@ -10,9 +10,17 @@
 
 CLASS TPrincipal FROM TForm
 
-   COMPONENT oButton1
+   COMPONENT cTitle
+   COMPONENT oNavPanel
+   COMPONENT oNavPanelOverlay
+   COMPONENT oTitleImage
+   COMPONENT oPages
+   COMPONENT oProductsPage
+   COMPONENT oPage2
+   COMPONENT oRoutes
+
    METHOD CreateForm()
-   METHOD ButtonOnClick( oSender )
+   METHOD setAppRoutes( oSender )
 
 ENDCLASS
 
@@ -20,8 +28,13 @@ ENDCLASS
 
 //------------------------------------------------------------------------------
 
-METHOD ButtonOnClick( oSender ) CLASS TPrincipal
-MsgAlert("Hola")
+METHOD setAppRoutes( oSender ) CLASS TPrincipal
+
+oSender:AddItem("Ruta 1")//, nImage, nSelectedImage, lCheck, nClrText)
+oSender:AddItem("Ruta 1")//, nImage, nSelectedImage, lCheck, nClrText)
+oSender:AddItem("Ruta 1")//, nImage, nSelectedImage, lCheck, nClrText)
+oSender:AddItem("Ruta 1")//, nImage, nSelectedImage, lCheck, nClrText)
+
 RETURN Nil
 
 //------------------------------------------------------------------------------

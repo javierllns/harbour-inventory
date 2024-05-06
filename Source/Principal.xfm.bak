@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 447, 62, 816, 639 )
+      ::SetBounds( 434, 97, 816, 639 )
       ::SetClientSize( 800, 600 )
       ::cText := "Principal"
       ::nClrPane := clMenu
@@ -57,7 +57,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :nClrText := 0x8D732C
          :nClrPaneEnd := clWindow
          :nBorderSides := bsNONE
-         :nClrHotPane := 0xECDBBB
+         :nClrHotPane := 0xF5EFE0
          :nClrHotText := 0x8D732C
          :nClrSelPane := clWindow
          :nClrSelText := 0x8D732C

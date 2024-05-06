@@ -1,8 +1,8 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 446, 102, 816, 639 )
-      ::SetClientSize( 800, 600 )
+      ::SetBounds( 0, 832, 160, 28 )
+      ::SetClientSize( 0, 0 )
       ::cText := "Principal"
       ::nClrPane := clMenu
       ::nShowMode := smMAXIMIZE
@@ -13,20 +13,20 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    ::Super:CreateForm( .F. )
 
    WITH OBJECT ::cTitle := TBanner():New( Self )
-      :SetBounds( 0, 0, 750, 50 )
+      :SetBounds( 0, 0, 180, 50 )
       :cText := "SEA-INVENTORY"
       :nAlign := alTOP
       :nAlignMarginRight := 50
       :lParentFont := .F.
       :oFont := TFont():Create( "Century Gothic", 16, 0, 400 )
       :nClrText := clWhite
-      :nClrPane := 0x8E762B
-      :nClrPaneEnd := 0x8E762B
+      :nClrPane := 0x8D732C
+      :nClrPaneEnd := 0x8D732C
       :Create()
    END
 
    WITH OBJECT ::oNavPanel := TShiftPanel():New( Self )
-      :SetBounds( 0, 50, 230, 550 )
+      :SetBounds( 0, 50, 230, 0 )
       :cText := "Navigation"
       :lParentFont := .F.
       :oFont := TFont():Create( "Tahoma", 11, 0, 700 )
@@ -35,7 +35,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :nClrPaneEnd := clWhite
       :lAutoScroll := .F.
       :nBorderSides := bsRIGHT
-      :nClrTitleText := 0x8E762B
+      :nClrTitleText := 0x8D732C
       :nClrTitleStart := clWhite
       :nClrTitleEnd := clWhite
       :Create()
@@ -54,20 +54,20 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :SetBounds( 8, 8, 214, 282 )
          :nAnchors := akALL
          :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
-         :nClrText := clSystem
+         :nClrText := 0x8D732C
          :nClrPaneEnd := clWindow
          :nBorderSides := bsNONE
          :nClrHotPane := 0xECDBBB
-         :nClrHotText := clSystem
+         :nClrHotText := 0x8D732C
          :nClrSelPane := clWindow
-         :nClrSelText := clSystem
+         :nClrSelText := 0x8D732C
          :lParentFont := .F.
          :OnCreate := "setAppRoutes"
          :Create()
       END
 
    WITH OBJECT ::oTitleImage := TImage():New( Self )
-      :SetBounds( 748, 0, 54, 50 )
+      :SetBounds( 178, 0, 54, 50 )
       :nAnchors := akTOPRIGHT
       :oPicture := "sea-boxes-light.png"
       :nBorderSides := bsNONE
@@ -76,7 +76,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::oPages := TPages():New( Self )
-      :SetBounds( 230, 50, 570, 550 )
+      :SetBounds( 230, 50, 0, 0 )
       :nAlign := alCLIENT
       :nIndex := 2
       ::oProductsPage := TPage():Create( ::oPages )

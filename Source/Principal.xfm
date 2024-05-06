@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 485, 105, 816, 639 )
+      ::SetBounds( 446, 102, 816, 639 )
       ::SetClientSize( 800, 600 )
       ::cText := "Principal"
       ::nClrPane := clMenu
@@ -20,8 +20,8 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :lParentFont := .F.
       :oFont := TFont():Create( "Century Gothic", 16, 0, 400 )
       :nClrText := clWhite
-      :nClrPane := clSystem
-      :nClrPaneEnd := clSystem
+      :nClrPane := 0x8E762B
+      :nClrPaneEnd := 0x8E762B
       :Create()
    END
 
@@ -35,7 +35,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :nClrPaneEnd := clWhite
       :lAutoScroll := .F.
       :nBorderSides := bsRIGHT
-      :nClrTitleText := clSystem
+      :nClrTitleText := 0x8E762B
       :nClrTitleStart := clWhite
       :nClrTitleEnd := clWhite
       :Create()

@@ -4,6 +4,8 @@
  * Descripción:
  * Autor:
  * Fecha: 03/05/2024
+ *
+ * Color Theme = 0x8E762B
  */
 
 #include "Xailer.ch"

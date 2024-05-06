@@ -1,8 +1,8 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 434, 97, 816, 639 )
-      ::SetClientSize( 800, 600 )
+      ::SetBounds( 469, 149, 800, 600 )
+      ::SetClientSize( 784, 561 )
       ::cText := "Principal"
       ::nClrPane := clMenu
       ::nShowMode := smMAXIMIZE
@@ -13,7 +13,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    ::Super:CreateForm( .F. )
 
    WITH OBJECT ::cTitle := TBanner():New( Self )
-      :SetBounds( 0, 0, 750, 50 )
+      :SetBounds( 0, 0, 734, 50 )
       :cText := "SEA-INVENTORY"
       :nAlign := alTOP
       :nAlignMarginRight := 50
@@ -26,7 +26,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::oNavPanel := TShiftPanel():New( Self )
-      :SetBounds( 0, 50, 230, 550 )
+      :SetBounds( 0, 50, 230, 511 )
       :cText := "Navigation"
       :lParentFont := .F.
       :oFont := TFont():Create( "Tahoma", 11, 0, 700 )
@@ -42,7 +42,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
       WITH OBJECT ::oNavPanelOverlay := TImage():New( ::oNavPanel )
-         :SetBounds( 0, 297, 230, 230 )
+         :SetBounds( 0, 258, 230, 230 )
          :nAnchors := akLEFTBOTTOM
          :nBorderStyle := bvNONE
          :oPicture := "sea-boxes.png"
@@ -50,24 +50,44 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :Create()
       END
 
-      WITH OBJECT ::oRoutes := TTreeViewMod():New( ::oNavPanel )
-         :SetBounds( 8, 8, 214, 282 )
-         :nAnchors := akALL
-         :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
-         :nClrText := 0x8D732C
-         :nClrPaneEnd := clWindow
-         :nBorderSides := bsNONE
-         :nClrHotPane := 0xF5EFE0
-         :nClrHotText := 0x8D732C
-         :nClrSelPane := clWindow
-         :nClrSelText := 0x8D732C
+      WITH OBJECT ::oButtonMod2 := TButtonMod():New( ::oNavPanel )
+         :SetBounds( 8, 12, 214, 35 )
+         :cText := "  ButtonMod1"
          :lParentFont := .F.
-         :OnCreate := "setAppRoutes"
+         :oFont := TFont():Create( "Tahoma", 11, 0, 400 )
+         :nClrText := 0x414141
+         :nClrPane := clWindow
+         :nBorderRadius := 3
+         :nClrBorder := 0xDFCB95
+         :nClrTextDisabled := clSilver
+         :nAlignment := taLEFT
+         :Create()
+      END
+
+      WITH OBJECT ::oButtonMod3 := TButtonMod():New( ::oNavPanel )
+         :SetBounds( 8, 12, 214, 32 )
+         :cText := "  ButtonMod1"
+         :lParentFont := .F.
+         :oFont := TFont():Create( "Tahoma", 11, 0, 400 )
+         :nClrPane := clMenu
+         :nBorderRadius := 3
+         :nAlignment := taLEFT
+         :Create()
+      END
+
+      WITH OBJECT ::oButtonMod4 := TButtonMod():New( ::oNavPanel )
+         :SetBounds( 8, 12, 214, 32 )
+         :cText := "  ButtonMod1"
+         :lParentFont := .F.
+         :oFont := TFont():Create( "Tahoma", 11, 0, 400 )
+         :nClrPane := clMenu
+         :nBorderRadius := 3
+         :nAlignment := taLEFT
          :Create()
       END
 
    WITH OBJECT ::oTitleImage := TImage():New( Self )
-      :SetBounds( 748, 0, 54, 50 )
+      :SetBounds( 732, 0, 54, 50 )
       :nAnchors := akTOPRIGHT
       :oPicture := "sea-boxes-light.png"
       :nBorderSides := bsNONE
@@ -76,7 +96,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::oPages := TPages():New( Self )
-      :SetBounds( 230, 50, 570, 550 )
+      :SetBounds( 230, 50, 554, 511 )
       :nAlign := alCLIENT
       :nIndex := 2
       ::oProductsPage := TPage():Create( ::oPages )

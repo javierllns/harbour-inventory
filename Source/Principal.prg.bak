@@ -19,24 +19,14 @@ CLASS TPrincipal FROM TForm
    COMPONENT oPages
    COMPONENT oProductsPage
    COMPONENT oPage2
-   COMPONENT oRoutes
+   COMPONENT oButtonMod2
+   COMPONENT oButtonMod3
+   COMPONENT oButtonMod4
 
    METHOD CreateForm()
-   METHOD setAppRoutes( oSender )
 
 ENDCLASS
 
 #include "Principal.xfm"
-
-//------------------------------------------------------------------------------
-
-METHOD setAppRoutes( oSender ) CLASS TPrincipal
-
-oSender:AddItem("Ruta 1")//, nImage, nSelectedImage, lCheck, nClrText)
-oSender:AddItem("Ruta 1")//, nImage, nSelectedImage, lCheck, nClrText)
-oSender:AddItem("Ruta 1")//, nImage, nSelectedImage, lCheck, nClrText)
-oSender:AddItem("Ruta 1")//, nImage, nSelectedImage, lCheck, nClrText)
-
-RETURN Nil
 
 //------------------------------------------------------------------------------

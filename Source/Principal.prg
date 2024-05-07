@@ -18,10 +18,15 @@ CLASS TPrincipal FROM TForm
    COMPONENT oTitleImage
    COMPONENT oPages
    COMPONENT oProductsPage
-   COMPONENT oPage2
-   COMPONENT oButtonMod2
-   COMPONENT oButtonMod3
-   COMPONENT oButtonMod4
+   COMPONENT oNavItem1
+   COMPONENT oNavItem2
+   COMPONENT oNavItem3
+   COMPONENT oNavItem4
+   COMPONENT oProductsPageTitle
+   COMPONENT oWelcomePage
+   COMPONENT oWelcomePageTitle
+   COMPONENT oNavItem5
+   COMPONENT oProvidersPageTitle
 
    METHOD CreateForm()
 

@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 469, 149, 800, 600 )
+      ::SetBounds( 599, 166, 800, 600 )
       ::SetClientSize( 784, 561 )
       ::cText := "Principal"
       ::nClrPane := clMenu
@@ -50,9 +50,9 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :Create()
       END
 
-      WITH OBJECT ::oButtonMod2 := TButtonMod():New( ::oNavPanel )
-         :SetBounds( 8, 12, 214, 35 )
-         :cText := "  ButtonMod1"
+      WITH OBJECT ::oNavItem1 := TButtonMod():New( ::oNavPanel )
+         :SetBounds( 8, 16, 214, 35 )
+         :cText := "  Home"
          :lParentFont := .F.
          :oFont := TFont():Create( "Tahoma", 11, 0, 400 )
          :nClrText := 0x414141
@@ -64,24 +64,58 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :Create()
       END
 
-      WITH OBJECT ::oButtonMod3 := TButtonMod():New( ::oNavPanel )
-         :SetBounds( 8, 12, 214, 32 )
-         :cText := "  ButtonMod1"
+      WITH OBJECT ::oNavItem2 := TButtonMod():New( ::oNavPanel )
+         :SetBounds( 8, 52, 214, 35 )
+         :cText := "  Products"
          :lParentFont := .F.
          :oFont := TFont():Create( "Tahoma", 11, 0, 400 )
-         :nClrPane := clMenu
+         :nClrText := 0x414141
+         :nClrPane := clWindow
          :nBorderRadius := 3
+         :nClrBorder := 0xDFCB95
+         :nClrTextDisabled := clSilver
          :nAlignment := taLEFT
          :Create()
       END
 
-      WITH OBJECT ::oButtonMod4 := TButtonMod():New( ::oNavPanel )
-         :SetBounds( 8, 12, 214, 32 )
-         :cText := "  ButtonMod1"
+      WITH OBJECT ::oNavItem3 := TButtonMod():New( ::oNavPanel )
+         :SetBounds( 8, 88, 214, 35 )
+         :cText := "  Providers"
          :lParentFont := .F.
          :oFont := TFont():Create( "Tahoma", 11, 0, 400 )
-         :nClrPane := clMenu
+         :nClrText := 0x414141
+         :nClrPane := clWindow
          :nBorderRadius := 3
+         :nClrBorder := 0xDFCB95
+         :nClrTextDisabled := clSilver
+         :nAlignment := taLEFT
+         :Create()
+      END
+
+      WITH OBJECT ::oNavItem4 := TButtonMod():New( ::oNavPanel )
+         :SetBounds( 8, 124, 214, 35 )
+         :cText := "  Stats"
+         :lParentFont := .F.
+         :oFont := TFont():Create( "Tahoma", 11, 0, 400 )
+         :nClrText := 0x414141
+         :nClrPane := clWindow
+         :nBorderRadius := 3
+         :nClrBorder := 0xDFCB95
+         :nClrTextDisabled := clSilver
+         :nAlignment := taLEFT
+         :Create()
+      END
+
+      WITH OBJECT ::oNavItem5 := TButtonMod():New( ::oNavPanel )
+         :SetBounds( 8, 160, 214, 35 )
+         :cText := "  Settings"
+         :lParentFont := .F.
+         :oFont := TFont():Create( "Tahoma", 11, 0, 400 )
+         :nClrText := 0x414141
+         :nClrPane := clWindow
+         :nBorderRadius := 3
+         :nClrBorder := 0xDFCB95
+         :nClrTextDisabled := clSilver
          :nAlignment := taLEFT
          :Create()
       END
@@ -98,12 +132,35 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    WITH OBJECT ::oPages := TPages():New( Self )
       :SetBounds( 230, 50, 554, 511 )
       :nAlign := alCLIENT
-      :nIndex := 2
+      :nIndex := 3
+      ::oWelcomePage := TPage():Create( ::oPages )
+
       ::oProductsPage := TPage():Create( ::oPages )
 
-      ::oPage2 := TPage():Create( ::oPages )
+      ::oProvidersPage := TPage():Create( ::oPages )
 
       :Create()
    END
+
+         WITH OBJECT ::oWelcomePageTitle := TBanner():New( ::oWelcomePage )
+            :SetBounds( 0, 0, 554, 25 )
+            :cText := "Welcome"
+            :nAlign := alTOP
+            :Create()
+         END
+
+         WITH OBJECT ::oProductsPageTitle := TBanner():New( ::oProductsPage )
+            :SetBounds( 0, 0, 554, 25 )
+            :cText := "Products"
+            :nAlign := alTOP
+            :Create()
+         END
+
+         WITH OBJECT ::oProvidersPageTitle := TBanner():New( ::oProvidersPage )
+            :SetBounds( 0, 0, 554, 25 )
+            :cText := "Providers"
+            :nAlign := alTOP
+            :Create()
+         END
 
 RETURN Self

@@ -15,17 +15,21 @@ CLASS TPrincipal FROM TForm
    COMPONENT cTitle
    COMPONENT oNavPanel
    COMPONENT oNavPanelOverlay
-   COMPONENT oTitleImage
-   COMPONENT oPages
-   COMPONENT oProductsPage
    COMPONENT oNavItem1
    COMPONENT oNavItem2
    COMPONENT oNavItem3
    COMPONENT oNavItem4
-   COMPONENT oProductsPageTitle
+   COMPONENT oNavItem5
+   COMPONENT oTitleImage
+   COMPONENT oPages
+
    COMPONENT oWelcomePage
    COMPONENT oWelcomePageTitle
-   COMPONENT oNavItem5
+
+   COMPONENT oProductsPage
+   COMPONENT oProductsPageTitle
+
+   COMPONENT oProvidersPage
    COMPONENT oProvidersPageTitle
 
    METHOD CreateForm()

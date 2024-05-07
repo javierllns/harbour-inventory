@@ -132,7 +132,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    WITH OBJECT ::oPages := TPages():New( Self )
       :SetBounds( 230, 50, 554, 511 )
       :nAlign := alCLIENT
-      :nIndex := 3
+      :nIndex := 1
       ::oWelcomePage := TPage():Create( ::oPages )
 
       ::oProductsPage := TPage():Create( ::oPages )

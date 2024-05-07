@@ -33,9 +33,30 @@ CLASS TPrincipal FROM TForm
    COMPONENT oProvidersPageTitle
 
    METHOD CreateForm()
+   METHOD oNavigateToWelcome( oSender )
+   METHOD oNavigateToProducts( oSender )
+   METHOD oNavigateToProviders( oSender )
 
 ENDCLASS
 
 #include "Principal.xfm"
+
+//------------------------------------------------------------------------------
+
+METHOD oNavigateToWelcome( oSender ) CLASS TPrincipal
+::oPages:nIndex = 1
+RETURN Nil
+
+//------------------------------------------------------------------------------
+
+METHOD oNavigateToProducts( oSender ) CLASS TPrincipal
+::oPages:nIndex = 2
+RETURN Nil
+
+//------------------------------------------------------------------------------
+
+METHOD oNavigateToProviders( oSender ) CLASS TPrincipal
+::oPages:nIndex = 3
+RETURN Nil
 
 //------------------------------------------------------------------------------

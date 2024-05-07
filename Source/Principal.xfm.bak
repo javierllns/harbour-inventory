@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 599, 166, 800, 600 )
+      ::SetBounds( 567, 95, 800, 600 )
       ::SetClientSize( 784, 561 )
       ::cText := "Principal"
       ::nClrPane := clMenu
@@ -61,6 +61,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :nClrBorder := 0xDFCB95
          :nClrTextDisabled := clSilver
          :nAlignment := taLEFT
+         :OnClick := "oNavigateToWelcome"
          :Create()
       END
 
@@ -75,6 +76,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :nClrBorder := 0xDFCB95
          :nClrTextDisabled := clSilver
          :nAlignment := taLEFT
+         :OnClick := "oNavigateToProducts"
          :Create()
       END
 
@@ -89,6 +91,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :nClrBorder := 0xDFCB95
          :nClrTextDisabled := clSilver
          :nAlignment := taLEFT
+         :OnClick := "oNavigateToProviders"
          :Create()
       END
 
@@ -132,7 +135,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    WITH OBJECT ::oPages := TPages():New( Self )
       :SetBounds( 230, 50, 554, 511 )
       :nAlign := alCLIENT
-      :nIndex := 3
+      :nIndex := 1
       ::oWelcomePage := TPage():Create( ::oPages )
 
       ::oProductsPage := TPage():Create( ::oPages )

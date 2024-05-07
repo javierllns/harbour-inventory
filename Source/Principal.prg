@@ -31,11 +31,17 @@ CLASS TPrincipal FROM TForm
 
    COMPONENT oProvidersPage
    COMPONENT oProvidersPageTitle
+   COMPONENT oStatsPage
+   COMPONENT oSettingsPage
+   COMPONENT oStatsPageTitle
+   COMPONENT oSettingsPageTitle
 
    METHOD CreateForm()
    METHOD oNavigateToWelcome( oSender )
    METHOD oNavigateToProducts( oSender )
    METHOD oNavigateToProviders( oSender )
+   METHOD oNavigateToStats( oSender )
+   METHOD oNavigateToSettings( oSender )
 
 ENDCLASS
 
@@ -57,6 +63,18 @@ RETURN Nil
 
 METHOD oNavigateToProviders( oSender ) CLASS TPrincipal
 ::oPages:nIndex = 3
+RETURN Nil
+
+//------------------------------------------------------------------------------
+
+METHOD oNavigateToStats( oSender ) CLASS TPrincipal
+::oPages:nIndex = 4
+RETURN Nil
+
+//------------------------------------------------------------------------------
+
+METHOD oNavigateToSettings( oSender ) CLASS TPrincipal
+::oPages:nIndex = 5
 RETURN Nil
 
 //------------------------------------------------------------------------------

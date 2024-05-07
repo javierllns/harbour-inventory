@@ -106,6 +106,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :nClrBorder := 0xDFCB95
          :nClrTextDisabled := clSilver
          :nAlignment := taLEFT
+         :OnClick := "oNavigateToStats"
          :Create()
       END
 
@@ -120,6 +121,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :nClrBorder := 0xDFCB95
          :nClrTextDisabled := clSilver
          :nAlignment := taLEFT
+         :OnClick := "oNavigateToSettings"
          :Create()
       END
 
@@ -142,6 +144,10 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
 
       ::oProvidersPage := TPage():Create( ::oPages )
 
+      ::oStatsPage := TPage():Create( ::oPages )
+
+      ::oSettingsPage := TPage():Create( ::oPages )
+
       :Create()
    END
 
@@ -162,6 +168,20 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          WITH OBJECT ::oProvidersPageTitle := TBanner():New( ::oProvidersPage )
             :SetBounds( 0, 0, 554, 25 )
             :cText := "Providers"
+            :nAlign := alTOP
+            :Create()
+         END
+
+         WITH OBJECT ::oStatsPageTitle := TBanner():New( ::oStatsPage )
+            :SetBounds( 0, 0, 554, 25 )
+            :cText := "Stats"
+            :nAlign := alTOP
+            :Create()
+         END
+
+         WITH OBJECT ::oSettingsPageTitle := TBanner():New( ::oSettingsPage )
+            :SetBounds( 0, 0, 554, 25 )
+            :cText := "Settings"
             :nAlign := alTOP
             :Create()
          END

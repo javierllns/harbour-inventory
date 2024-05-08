@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 589, 124, 802, 625 )
+      ::SetBounds( 488, 102, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -178,7 +178,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :SetBounds( 230, 54, 556, 532 )
       :nAlign := alCLIENT
       :nAlignMarginTop := 4
-      :nIndex := 1
+      :nIndex := 2
       ::oWelcomePage := TPage():Create( ::oPages )
 
       ::oProductsPage := TPage():Create( ::oPages )
@@ -208,11 +208,33 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
+         WITH OBJECT ::oShape1 := TShape():New( ::oProductsPage )
+            :SetBounds( 8, 40, 538, 482 )
+            :nAnchors := akALL
+            :nClrPane := clWhite
+            :nShapeType := stRECTANGLE
+            :nClrLine := clActiveBorder
+            :nRadius := 10
+            :lFillShape := .T.
+            :Create()
+         END
+
          WITH OBJECT ::oProvidersPageTitle := TLabel():New( ::oProvidersPage )
             :SetBounds( 9, 9, 77, 24 )
             :cText := "Providers"
             :lParentFont := .F.
             :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
+            :Create()
+         END
+
+         WITH OBJECT ::oShape2 := TShape():New( ::oProvidersPage )
+            :SetBounds( 8, 40, 538, 482 )
+            :nAnchors := akALL
+            :nClrPane := clWhite
+            :nShapeType := stRECTANGLE
+            :nClrLine := clActiveBorder
+            :nRadius := 10
+            :lFillShape := .T.
             :Create()
          END
 
@@ -224,11 +246,33 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
+         WITH OBJECT ::oShape3 := TShape():New( ::oStatsPage )
+            :SetBounds( 8, 40, 538, 482 )
+            :nAnchors := akALL
+            :nClrPane := clWhite
+            :nShapeType := stRECTANGLE
+            :nClrLine := clActiveBorder
+            :nRadius := 10
+            :lFillShape := .T.
+            :Create()
+         END
+
          WITH OBJECT ::oSettingsPageTitle := TLabel():New( ::oSettingsPage )
             :SetBounds( 9, 9, 68, 24 )
             :cText := "Settings"
             :lParentFont := .F.
             :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
+            :Create()
+         END
+
+         WITH OBJECT ::oShape4 := TShape():New( ::oSettingsPage )
+            :SetBounds( 8, 40, 538, 482 )
+            :nAnchors := akALL
+            :nClrPane := clWhite
+            :nShapeType := stRECTANGLE
+            :nClrLine := clActiveBorder
+            :nRadius := 10
+            :lFillShape := .T.
             :Create()
          END
 

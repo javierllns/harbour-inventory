@@ -38,10 +38,10 @@ CLASS TPrincipal FROM TForm
 
    COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
-
-
-
-
+   COMPONENT oShape1
+   COMPONENT oShape2
+   COMPONENT oShape3
+   COMPONENT oShape4
 
    METHOD CreateForm()
    METHOD oNavigateToWelcome( oSender )

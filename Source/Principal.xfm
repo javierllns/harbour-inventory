@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 699, 92, 802, 625 )
+      ::SetBounds( 589, 124, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -192,46 +192,35 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :Create()
    END
 
-         WITH OBJECT ::oWelcomePageTitle := TBanner():New( ::oWelcomePage )
-            :SetBounds( 0, 0, 556, 42 )
+         WITH OBJECT ::oWelcomePageTitle := TLabel():New( ::oWelcomePage )
+            :SetBounds( 9, 9, 77, 24 )
             :cText := "Welcome"
-            :nAlign := alTOP
-            :nAnchors := akTOPLEFTRIGHT
             :lParentFont := .F.
             :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
-            :nClrText := 0x414141
-            :nClrPane := clWhite
-            :nBorderStyle := bvFLAT
-            :nBorderSides := bsBOTTOM
-            :nClrPaneEnd := clWhite
             :Create()
          END
 
-         WITH OBJECT ::oProvidersPageTitle := TBanner():New( ::oProvidersPage )
-            :SetBounds( 0, 0, 556, 42 )
+         WITH OBJECT ::oProductsPageTitle := TLabel():New( ::oProductsPage )
+            :SetBounds( 9, 9, 73, 24 )
+            :cText := "Products"
+            :lParentFont := .F.
+            :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
+            :Create()
+         END
+
+         WITH OBJECT ::oProvidersPageTitle := TLabel():New( ::oProvidersPage )
+            :SetBounds( 9, 9, 77, 24 )
             :cText := "Providers"
-            :nAlign := alTOP
             :lParentFont := .F.
             :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
-            :nClrText := 0x414141
-            :nClrPane := clWhite
-            :nBorderStyle := bvFLAT
-            :nBorderSides := bsBOTTOM
-            :nClrPaneEnd := clWhite
             :Create()
          END
 
-         WITH OBJECT ::oStatsPageTitle := TBanner():New( ::oStatsPage )
-            :SetBounds( 0, 0, 556, 42 )
+         WITH OBJECT ::oStatsPageTitle := TLabel():New( ::oStatsPage )
+            :SetBounds( 9, 9, 42, 24 )
             :cText := "Stats"
-            :nAlign := alTOP
             :lParentFont := .F.
             :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
-            :nClrText := 0x414141
-            :nClrPane := clWhite
-            :nBorderStyle := bvFLAT
-            :nBorderSides := bsBOTTOM
-            :nClrPaneEnd := clWhite
             :Create()
          END
 

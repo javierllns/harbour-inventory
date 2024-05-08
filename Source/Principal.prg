@@ -28,9 +28,10 @@ CLASS TPrincipal FROM TForm
    COMPONENT oWelcomePageTitle
 
    COMPONENT oProductsPage
+   COMPONENT oProductsPageTitle
 
-   COMPONENT oProvidersPage
    COMPONENT oProvidersPageTitle
+   COMPONENT oProvidersPage
 
    COMPONENT oStatsPage
    COMPONENT oStatsPageTitle

@@ -55,25 +55,17 @@ METHOD oNavigateToWelcome( oSender ) CLASS TPrincipal
 ::oPages:nIndex = 1
 RETURN Nil
 
-//------------------------------------------------------------------------------
-
 METHOD oNavigateToProducts( oSender ) CLASS TPrincipal
 ::oPages:nIndex = 2
 RETURN Nil
-
-//------------------------------------------------------------------------------
 
 METHOD oNavigateToProviders( oSender ) CLASS TPrincipal
 ::oPages:nIndex = 3
 RETURN Nil
 
-//------------------------------------------------------------------------------
-
 METHOD oNavigateToStats( oSender ) CLASS TPrincipal
 ::oPages:nIndex = 4
 RETURN Nil
-
-//------------------------------------------------------------------------------
 
 METHOD oNavigateToSettings( oSender ) CLASS TPrincipal
 ::oPages:nIndex = 5

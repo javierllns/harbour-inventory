@@ -37,6 +37,7 @@ CLASS TPrincipal FROM TForm
 
    COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
+   COMPONENT oSysAnimate1
 
    METHOD CreateForm()
    METHOD oNavigateToWelcome( oSender )
@@ -54,8 +55,6 @@ ENDCLASS
 METHOD oNavigateToWelcome( oSender ) CLASS TPrincipal
 ::oPages:nIndex = 1
 RETURN Nil
-
-//------------------------------------------------------------------------------
 
 METHOD oNavigateToProducts( oSender ) CLASS TPrincipal
 ::oPages:nIndex = 2

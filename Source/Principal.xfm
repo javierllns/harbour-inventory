@@ -1,10 +1,10 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 379, 186, 800, 600 )
+      ::SetBounds( 478, 105, 800, 600 )
       ::SetClientSize( 784, 561 )
       ::cText := "Principal"
-      ::nClrPane := clMenu
+      ::nClrPane := 0x8E762B
       ::nShowMode := smMAXIMIZE
       ::nMinWidth := 800
       ::nMinHeight := 600
@@ -26,8 +26,9 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::oNavPanel := TShiftPanel():New( Self )
-      :SetBounds( 0, 50, 230, 511 )
+      :SetBounds( 0, 54, 230, 507 )
       :cText := "Navigation"
+      :nAlignMarginTop := 4
       :lParentFont := .F.
       :oFont := TFont():Create( "Tahoma", 11, 0, 700 )
       :nClrPane := clWhite
@@ -42,7 +43,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
       WITH OBJECT ::oNavPanelOverlay := TImage():New( ::oNavPanel )
-         :SetBounds( 0, 258, 230, 230 )
+         :SetBounds( 0, 254, 230, 230 )
          :nAnchors := akLEFTBOTTOM
          :nBorderStyle := bvNONE
          :oPicture := "sea-boxes.png"
@@ -165,9 +166,10 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::oPages := TPages():New( Self )
-      :SetBounds( 230, 50, 554, 511 )
+      :SetBounds( 230, 54, 554, 507 )
       :nAlign := alCLIENT
-      :nIndex := 1
+      :nAlignMarginTop := 4
+      :nIndex := 5
       ::oWelcomePage := TPage():Create( ::oPages )
 
       ::oProductsPage := TPage():Create( ::oPages )
@@ -182,9 +184,17 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
          WITH OBJECT ::oWelcomePageTitle := TBanner():New( ::oWelcomePage )
-            :SetBounds( 0, 0, 554, 25 )
+            :SetBounds( 0, 4, 554, 25 )
             :cText := "Welcome"
-            :nAlign := alTOP
+            :nAnchors := akTOPLEFTRIGHT
+            :Create()
+         END
+
+         WITH OBJECT ::oProgressBarMod1 := TProgressBarMod():New( ::oWelcomePage )
+            :SetBounds( 28, 112, 458, 24 )
+            :nBorderStyle := bvNONE
+            :nClrBar := 0xE7D9AF
+            :nValue := 100
             :Create()
          END
 
@@ -215,5 +225,15 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :nAlign := alTOP
             :Create()
          END
+
+   WITH OBJECT ::oProgressBarMod2 := TProgressBarMod():New( Self )
+      :SetBounds( 0, 50, 784, 4 )
+      :nAnchors := akTOPLEFTRIGHT
+      :nClrPane := 0x8E762B
+      :nBorderStyle := bvNONE
+      :nClrBar := 0x11A83F
+      :nValue := 100
+      :Create()
+   END
 
 RETURN Self

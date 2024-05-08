@@ -37,7 +37,8 @@ CLASS TPrincipal FROM TForm
 
    COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
-   COMPONENT oSysAnimate1
+   COMPONENT oProgressBarMod1
+   COMPONENT oProgressBarMod2
 
    METHOD CreateForm()
    METHOD oNavigateToWelcome( oSender )

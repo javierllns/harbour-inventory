@@ -1,11 +1,10 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 444, 76, 800, 600 )
-      ::SetClientSize( 784, 561 )
+      ::SetBounds( 371, 87, 802, 625 )
+      ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
-      ::nShowMode := smMAXIMIZE
       ::nMinWidth := 800
       ::nMinHeight := 600
       ::Create()
@@ -13,7 +12,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    ::Super:CreateForm( .F. )
 
    WITH OBJECT ::cTitle := TBanner():New( Self )
-      :SetBounds( 0, 0, 734, 50 )
+      :SetBounds( 0, 0, 736, 50 )
       :cText := "SEA-INVENTORY"
       :nAlign := alTOP
       :nAlignMarginRight := 50
@@ -26,7 +25,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::oNavPanel := TShiftPanel():New( Self )
-      :SetBounds( 0, 54, 230, 507 )
+      :SetBounds( 0, 54, 230, 532 )
       :cText := "Navigation"
       :nAlignMarginTop := 4
       :lParentFont := .F.
@@ -42,7 +41,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
       WITH OBJECT ::oNavPanelOverlay := TImage():New( ::oNavPanel )
-         :SetBounds( 0, 254, 230, 230 )
+         :SetBounds( 0, 279, 230, 230 )
          :nAnchors := akLEFTBOTTOM
          :nBorderStyle := bvNONE
          :oPicture := "sea-boxes.png"
@@ -156,7 +155,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       END
 
    WITH OBJECT ::oTitleImage := TImage():New( Self )
-      :SetBounds( 732, 0, 54, 50 )
+      :SetBounds( 734, 0, 54, 50 )
       :nAnchors := akTOPRIGHT
       :oPicture := "sea-boxes-light.png"
       :nBorderSides := bsNONE
@@ -165,7 +164,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::oPages := TPages():New( Self )
-      :SetBounds( 230, 54, 554, 507 )
+      :SetBounds( 230, 54, 556, 532 )
       :nAlign := alCLIENT
       :nAlignMarginTop := 4
       :nIndex := 1
@@ -183,7 +182,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
          WITH OBJECT ::oWelcomePageTitle := TBanner():New( ::oWelcomePage )
-            :SetBounds( 0, 0, 554, 42 )
+            :SetBounds( 0, 0, 556, 42 )
             :cText := "Welcome"
             :nAlign := alTOP
             :nAnchors := akTOPLEFTRIGHT
@@ -197,8 +196,25 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
+         WITH OBJECT ::oShape1 := TShape():New( ::oWelcomePage )
+            :SetBounds( 28, 68, 500, 435 )
+            :nAnchors := akALL
+            :nClrPane := clWhite
+            :nShapeType := stRECTANGLE
+            :nClrLine := clActiveBorder
+            :nVertices := 4
+            :nRadius := 10
+            :lFillShape := .T.
+            :Create()
+         END
+
+            WITH OBJECT ::oSwitch1 := TSwitch():New( ::oShape1 )
+               :SetBounds( 20, 16, 137, 30 )
+               :Create()
+            END
+
          WITH OBJECT ::oProductsPageTitle := TBanner():New( ::oProductsPage )
-            :SetBounds( 0, 0, 554, 42 )
+            :SetBounds( 0, 0, 556, 42 )
             :cText := "Products"
             :nAlign := alTOP
             :lParentFont := .F.
@@ -212,7 +228,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          END
 
          WITH OBJECT ::oProvidersPageTitle := TBanner():New( ::oProvidersPage )
-            :SetBounds( 0, 0, 554, 42 )
+            :SetBounds( 0, 0, 556, 42 )
             :cText := "Providers"
             :nAlign := alTOP
             :lParentFont := .F.
@@ -226,7 +242,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          END
 
          WITH OBJECT ::oStatsPageTitle := TBanner():New( ::oStatsPage )
-            :SetBounds( 0, 0, 554, 42 )
+            :SetBounds( 0, 0, 556, 42 )
             :cText := "Stats"
             :nAlign := alTOP
             :lParentFont := .F.
@@ -240,7 +256,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          END
 
          WITH OBJECT ::oSettingsPageTitle := TBanner():New( ::oSettingsPage )
-            :SetBounds( 0, 0, 554, 42 )
+            :SetBounds( 0, 0, 556, 42 )
             :cText := "Settings"
             :nAlign := alTOP
             :lParentFont := .F.
@@ -253,8 +269,8 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-   WITH OBJECT ::oProgressBarMod2 := TProgressBarMod():New( Self )
-      :SetBounds( 0, 50, 784, 4 )
+   WITH OBJECT ::oProgressBar := TProgressBarMod():New( Self )
+      :SetBounds( 0, 50, 786, 4 )
       :nAnchors := akTOPLEFTRIGHT
       :nClrPane := clActiveBorder
       :lTransparent := .F.

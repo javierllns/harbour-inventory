@@ -13,6 +13,7 @@
 CLASS TPrincipal FROM TForm
 
    COMPONENT cTitle
+   COMPONENT oProgressBar
    COMPONENT oNavPanel
    COMPONENT oNavPanelOverlay
    COMPONENT oNavItem1
@@ -37,7 +38,8 @@ CLASS TPrincipal FROM TForm
 
    COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
-   COMPONENT oProgressBarMod2
+   COMPONENT oShape1
+   COMPONENT oSwitch1
 
    METHOD CreateForm()
    METHOD oNavigateToWelcome( oSender )

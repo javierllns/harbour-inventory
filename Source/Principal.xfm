@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 488, 102, 802, 625 )
+      ::SetBounds( 707, 96, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -178,7 +178,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :SetBounds( 230, 54, 556, 532 )
       :nAlign := alCLIENT
       :nAlignMarginTop := 4
-      :nIndex := 2
+      :nIndex := 3
       ::oWelcomePage := TPage():Create( ::oPages )
 
       ::oProductsPage := TPage():Create( ::oPages )
@@ -208,7 +208,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-         WITH OBJECT ::oShape1 := TShape():New( ::oProductsPage )
+         WITH OBJECT ::oProductsPageContainer := TShape():New( ::oProductsPage )
             :SetBounds( 8, 40, 538, 482 )
             :nAnchors := akALL
             :nClrPane := clWhite
@@ -227,7 +227,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-         WITH OBJECT ::oShape2 := TShape():New( ::oProvidersPage )
+         WITH OBJECT ::oProvidersPageContainer := TShape():New( ::oProvidersPage )
             :SetBounds( 8, 40, 538, 482 )
             :nAnchors := akALL
             :nClrPane := clWhite
@@ -246,7 +246,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-         WITH OBJECT ::oShape3 := TShape():New( ::oStatsPage )
+         WITH OBJECT ::oStatsPageContainer := TShape():New( ::oStatsPage )
             :SetBounds( 8, 40, 538, 482 )
             :nAnchors := akALL
             :nClrPane := clWhite
@@ -265,7 +265,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-         WITH OBJECT ::oShape4 := TShape():New( ::oSettingsPage )
+         WITH OBJECT ::oSettingsPageContainer := TShape():New( ::oSettingsPage )
             :SetBounds( 8, 40, 538, 482 )
             :nAnchors := akALL
             :nClrPane := clWhite

@@ -29,19 +29,19 @@ CLASS TPrincipal FROM TForm
 
    COMPONENT oProductsPage
    COMPONENT oProductsPageTitle
+   COMPONENT oProductsPageContainer
 
-   COMPONENT oProvidersPageTitle
    COMPONENT oProvidersPage
+   COMPONENT oProvidersPageTitle
+   COMPONENT oProvidersPageContainer
 
    COMPONENT oStatsPage
    COMPONENT oStatsPageTitle
+   COMPONENT oStatsPageContainer
 
    COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
-   COMPONENT oShape1
-   COMPONENT oShape2
-   COMPONENT oShape3
-   COMPONENT oShape4
+   COMPONENT oSettingsPageContainer
 
    METHOD CreateForm()
    METHOD oNavigateToWelcome( oSender )

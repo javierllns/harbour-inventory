@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 371, 87, 802, 625 )
+      ::SetBounds( 561, 116, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -196,23 +196,6 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-         WITH OBJECT ::oShape1 := TShape():New( ::oWelcomePage )
-            :SetBounds( 28, 68, 500, 435 )
-            :nAnchors := akALL
-            :nClrPane := clWhite
-            :nShapeType := stRECTANGLE
-            :nClrLine := clActiveBorder
-            :nVertices := 4
-            :nRadius := 10
-            :lFillShape := .T.
-            :Create()
-         END
-
-            WITH OBJECT ::oSwitch1 := TSwitch():New( ::oShape1 )
-               :SetBounds( 20, 16, 137, 30 )
-               :Create()
-            END
-
          WITH OBJECT ::oProductsPageTitle := TBanner():New( ::oProductsPage )
             :SetBounds( 0, 0, 556, 42 )
             :cText := "Products"
@@ -268,6 +251,23 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :nClrPaneEnd := clWhite
             :Create()
          END
+
+         WITH OBJECT ::oSettingsPageShapeContainer := TShape():New( ::oSettingsPage )
+            :SetBounds( 28, 68, 500, 435 )
+            :nAnchors := akALL
+            :nClrPane := clWhite
+            :nShapeType := stRECTANGLE
+            :nClrLine := clActiveBorder
+            :nVertices := 4
+            :nRadius := 10
+            :lFillShape := .T.
+            :Create()
+         END
+
+            WITH OBJECT ::oSettingsPageSwitch1 := TSwitch():New( ::oSettingsPageShapeContainer )
+               :SetBounds( 20, 16, 137, 30 )
+               :Create()
+            END
 
    WITH OBJECT ::oProgressBar := TProgressBarMod():New( Self )
       :SetBounds( 0, 50, 786, 4 )

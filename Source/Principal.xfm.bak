@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 658, 147, 802, 625 )
+      ::SetBounds( 404, 131, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -196,20 +196,6 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-         WITH OBJECT ::oProductsPageTitle := TBanner():New( ::oProductsPage )
-            :SetBounds( 0, 0, 556, 42 )
-            :cText := "Products"
-            :nAlign := alTOP
-            :lParentFont := .F.
-            :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
-            :nClrText := 0x414141
-            :nClrPane := clWhite
-            :nBorderStyle := bvFLAT
-            :nBorderSides := bsBOTTOM
-            :nClrPaneEnd := clWhite
-            :Create()
-         END
-
          WITH OBJECT ::oProvidersPageTitle := TBanner():New( ::oProvidersPage )
             :SetBounds( 0, 0, 556, 42 )
             :cText := "Providers"
@@ -238,48 +224,11 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-         WITH OBJECT ::oSettingsPageShapeContainer := TShape():New( ::oSettingsPage )
-            :SetBounds( 8, 40, 539, 482 )
-            :nAnchors := akALL
-            :nClrPane := clWhite
-            :nShapeType := stRECTANGLE
-            :nClrLine := clActiveBorder
-            :nVertices := 4
-            :nRadius := 10
-            :lFillShape := .T.
-            :Create()
-         END
-
-            WITH OBJECT ::oSettingsPageSubTitle1 := TLabel():New( ::oSettingsPageShapeContainer )
-               :SetBounds( 12, 8, 60, 19 )
-               :cText := "General"
-               :lParentFont := .F.
-               :oFont := TFont():Create( "Tahoma", 11, 0, 700 )
-               :nClrText := 0x414141
-               :Create()
-            END
-
-            WITH OBJECT ::oSettingsPageLabelOpt1 := TLabel():New( ::oSettingsPageShapeContainer )
-               :SetBounds( 12, 32, 175, 19 )
-               :cText := "Deactive PopUp messages"
-               :lParentFont := .F.
-               :oFont := TFont():Create( "Tahoma", 11, 0, 400 )
-               :nVAlignment := vaCENTER
-               :Create()
-            END
-
-            WITH OBJECT ::oSettingsPageSwitchOpt1 := TSwitch():New( ::oSettingsPageShapeContainer )
-               :SetBounds( 481, 32, 50, 27 )
-               :nAnchors := akTOPRIGHT
-               :Create()
-            END
-
-         WITH OBJECT ::oSettingsPageTitle := TLabel():New( ::oSettingsPage )
-            :SetBounds( 9, 8, 68, 24 )
+         WITH OBJECT ::oLabel1 := TLabel():New( ::oSettingsPage )
+            :SetBounds( 9, 9, 68, 24 )
             :cText := "Settings"
             :lParentFont := .F.
             :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
-            :nClrText := 0x414141
             :Create()
          END
 

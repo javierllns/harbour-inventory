@@ -36,9 +36,7 @@ CLASS TPrincipal FROM TForm
    COMPONENT oStatsPageTitle
 
    COMPONENT oSettingsPage
-   COMPONENT oShape1
-   COMPONENT oLabel1
-   COMPONENT oSettingsPageShapeContainer
+   COMPONENT oSettingsPageTitle
 
    METHOD CreateForm()
    METHOD oNavigateToWelcome( oSender )

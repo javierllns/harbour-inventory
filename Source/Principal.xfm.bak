@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 404, 131, 802, 625 )
+      ::SetBounds( 699, 92, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -21,6 +21,26 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :nClrText := clWhite
       :nClrPane := 0x8D732C
       :nClrPaneEnd := 0x8D732C
+      :Create()
+   END
+
+   WITH OBJECT ::oTitleImage := TImage():New( Self )
+      :SetBounds( 734, 0, 54, 50 )
+      :nAnchors := akTOPRIGHT
+      :oPicture := "sea-boxes-light.png"
+      :nBorderSides := bsNONE
+      :lAutoFit := .T.
+      :Create()
+   END
+
+   WITH OBJECT ::oProgressBar := TProgressBarMod():New( Self )
+      :SetBounds( 0, 50, 786, 4 )
+      :nAnchors := akTOPLEFTRIGHT
+      :nClrPane := clActiveBorder
+      :lTransparent := .F.
+      :nBorderStyle := bvNONE
+      :nClrBar := 0x15D04E
+      :nValue := 75
       :Create()
    END
 
@@ -154,15 +174,6 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          :Create()
       END
 
-   WITH OBJECT ::oTitleImage := TImage():New( Self )
-      :SetBounds( 734, 0, 54, 50 )
-      :nAnchors := akTOPRIGHT
-      :oPicture := "sea-boxes-light.png"
-      :nBorderSides := bsNONE
-      :lAutoFit := .T.
-      :Create()
-   END
-
    WITH OBJECT ::oPages := TPages():New( Self )
       :SetBounds( 230, 54, 556, 532 )
       :nAlign := alCLIENT
@@ -224,23 +235,12 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-         WITH OBJECT ::oLabel1 := TLabel():New( ::oSettingsPage )
+         WITH OBJECT ::oSettingsPageTitle := TLabel():New( ::oSettingsPage )
             :SetBounds( 9, 9, 68, 24 )
             :cText := "Settings"
             :lParentFont := .F.
             :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
             :Create()
          END
-
-   WITH OBJECT ::oProgressBar := TProgressBarMod():New( Self )
-      :SetBounds( 0, 50, 786, 4 )
-      :nAnchors := akTOPLEFTRIGHT
-      :nClrPane := clActiveBorder
-      :lTransparent := .F.
-      :nBorderStyle := bvNONE
-      :nClrBar := 0x15D04E
-      :nValue := 75
-      :Create()
-   END
 
 RETURN Self

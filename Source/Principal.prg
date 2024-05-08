@@ -39,7 +39,9 @@ CLASS TPrincipal FROM TForm
    COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
    COMPONENT oSettingsPageShapeContainer
-   COMPONENT oSettingsPageSwitch1
+   COMPONENT oSettingsPageSubTitle1
+   COMPONENT oSettingsPageLabelOpt1
+   COMPONENT oSettingsPageSwitchOpt1
 
    METHOD CreateForm()
    METHOD oNavigateToWelcome( oSender )

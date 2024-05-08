@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 707, 96, 802, 625 )
+      ::SetBounds( 415, 119, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -10,6 +10,15 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       ::Create()
    ENDIF
    ::Super:CreateForm( .F. )
+
+   WITH OBJECT ::oMariaDBDataSource := TMariaDBDataSource():New( Self )
+      :cHost := "localhost"
+      :cUser := "root"
+      :cPassword := "1234"
+      :cDatabase := "harbour-inventory"
+      :lConnected := .T.
+      :Create()
+   END
 
    WITH OBJECT ::cTitle := TBanner():New( Self )
       :SetBounds( 0, 0, 736, 50 )
@@ -178,7 +187,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :SetBounds( 230, 54, 556, 532 )
       :nAlign := alCLIENT
       :nAlignMarginTop := 4
-      :nIndex := 3
+      :nIndex := 1
       ::oWelcomePage := TPage():Create( ::oPages )
 
       ::oProductsPage := TPage():Create( ::oPages )
@@ -218,6 +227,20 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :lFillShape := .T.
             :Create()
          END
+
+            WITH OBJECT ::oDbBrowseMod1 := TDbBrowseMod():New( ::oProductsPageContainer )
+               :SetBounds( 4, 92, 530, 386 )
+               :nBorderStyle := bvNONE
+               :nRowHeight := 21
+               :Create()
+            END
+
+            WITH OBJECT ::oButton1 := TButton():New( ::oProductsPageContainer )
+               :SetBounds( 20, 32, 80, 25 )
+               :cText := "Button1"
+               :OnClick := "CheckMariaDBConnection"
+               :Create()
+            END
 
          WITH OBJECT ::oProvidersPageTitle := TLabel():New( ::oProvidersPage )
             :SetBounds( 9, 9, 77, 24 )

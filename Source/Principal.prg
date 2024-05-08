@@ -11,7 +11,10 @@
 #include "Xailer.ch"
 
 CLASS TPrincipal FROM TForm
+   //Data
+   COMPONENT oMariaDBDataSource
 
+   //GUI
    COMPONENT cTitle
    COMPONENT oProgressBar
    COMPONENT oNavPanel
@@ -42,13 +45,17 @@ CLASS TPrincipal FROM TForm
    COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
    COMPONENT oSettingsPageContainer
+   COMPONENT oDbBrowseMod1
+   COMPONENT oButton1
 
+   //Handlers
    METHOD CreateForm()
    METHOD oNavigateToWelcome( oSender )
    METHOD oNavigateToProducts( oSender )
    METHOD oNavigateToProviders( oSender )
    METHOD oNavigateToStats( oSender )
    METHOD oNavigateToSettings( oSender )
+   METHOD CheckMariaDBConnection( oSender )
 
 ENDCLASS
 
@@ -74,6 +81,12 @@ RETURN Nil
 
 METHOD oNavigateToSettings( oSender ) CLASS TPrincipal
 ::oPages:nIndex = 5
+RETURN Nil
+
+//------------------------------------------------------------------------------
+
+METHOD CheckMariaDBConnection( oSender ) CLASS TPrincipal
+   MsgInfo(::oMariaDBDataSource:lConnected)
 RETURN Nil
 
 //------------------------------------------------------------------------------

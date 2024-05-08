@@ -28,7 +28,6 @@ CLASS TPrincipal FROM TForm
    COMPONENT oWelcomePageTitle
 
    COMPONENT oProductsPage
-   COMPONENT oProductsPageTitle
 
    COMPONENT oProvidersPage
    COMPONENT oProvidersPageTitle
@@ -37,11 +36,9 @@ CLASS TPrincipal FROM TForm
    COMPONENT oStatsPageTitle
 
    COMPONENT oSettingsPage
-   COMPONENT oSettingsPageTitle
+   COMPONENT oShape1
+   COMPONENT oLabel1
    COMPONENT oSettingsPageShapeContainer
-   COMPONENT oSettingsPageSubTitle1
-   COMPONENT oSettingsPageLabelOpt1
-   COMPONENT oSettingsPageSwitchOpt1
 
    METHOD CreateForm()
    METHOD oNavigateToWelcome( oSender )

@@ -2,5 +2,5 @@
 LockControls=.F.
 [DESKTOP]
 1=harbour-inventory.prg,19,0,19,0,0,0,496
-2=Principal.prg,52,19,52,19,39,0,648
+2=Principal.prg,1,0,1,0,0,0,648
 Current=2

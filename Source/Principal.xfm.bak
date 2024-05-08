@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 478, 105, 800, 600 )
+      ::SetBounds( 444, 76, 800, 600 )
       ::SetClientSize( 784, 561 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -32,7 +32,6 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :lParentFont := .F.
       :oFont := TFont():Create( "Tahoma", 11, 0, 700 )
       :nClrPane := clWhite
-      :nBorderStyle := bvHALFSUNKEN
       :nClrPaneEnd := clWhite
       :lAutoScroll := .F.
       :nBorderSides := bsRIGHT
@@ -184,48 +183,84 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
          WITH OBJECT ::oWelcomePageTitle := TBanner():New( ::oWelcomePage )
-            :SetBounds( 0, 0, 554, 25 )
+            :SetBounds( 0, 0, 554, 42 )
             :cText := "Welcome"
             :nAlign := alTOP
             :nAnchors := akTOPLEFTRIGHT
+            :lParentFont := .F.
+            :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
+            :nClrText := 0x414141
+            :nClrPane := clWhite
+            :nBorderStyle := bvFLAT
+            :nBorderSides := bsBOTTOM
+            :nClrPaneEnd := clWhite
             :Create()
          END
 
          WITH OBJECT ::oProductsPageTitle := TBanner():New( ::oProductsPage )
-            :SetBounds( 0, 0, 554, 25 )
+            :SetBounds( 0, 0, 554, 42 )
             :cText := "Products"
             :nAlign := alTOP
+            :lParentFont := .F.
+            :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
+            :nClrText := 0x414141
+            :nClrPane := clWhite
+            :nBorderStyle := bvFLAT
+            :nBorderSides := bsBOTTOM
+            :nClrPaneEnd := clWhite
             :Create()
          END
 
          WITH OBJECT ::oProvidersPageTitle := TBanner():New( ::oProvidersPage )
-            :SetBounds( 0, 0, 554, 25 )
+            :SetBounds( 0, 0, 554, 42 )
             :cText := "Providers"
             :nAlign := alTOP
+            :lParentFont := .F.
+            :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
+            :nClrText := 0x414141
+            :nClrPane := clWhite
+            :nBorderStyle := bvFLAT
+            :nBorderSides := bsBOTTOM
+            :nClrPaneEnd := clWhite
             :Create()
          END
 
          WITH OBJECT ::oStatsPageTitle := TBanner():New( ::oStatsPage )
-            :SetBounds( 0, 0, 554, 25 )
+            :SetBounds( 0, 0, 554, 42 )
             :cText := "Stats"
             :nAlign := alTOP
+            :lParentFont := .F.
+            :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
+            :nClrText := 0x414141
+            :nClrPane := clWhite
+            :nBorderStyle := bvFLAT
+            :nBorderSides := bsBOTTOM
+            :nClrPaneEnd := clWhite
             :Create()
          END
 
          WITH OBJECT ::oSettingsPageTitle := TBanner():New( ::oSettingsPage )
-            :SetBounds( 0, 0, 554, 25 )
+            :SetBounds( 0, 0, 554, 42 )
             :cText := "Settings"
             :nAlign := alTOP
+            :lParentFont := .F.
+            :oFont := TFont():Create( "Tahoma", 14, 0, 400 )
+            :nClrText := 0x414141
+            :nClrPane := clWhite
+            :nBorderStyle := bvFLAT
+            :nBorderSides := bsBOTTOM
+            :nClrPaneEnd := clWhite
             :Create()
          END
 
    WITH OBJECT ::oProgressBarMod2 := TProgressBarMod():New( Self )
       :SetBounds( 0, 50, 784, 4 )
       :nAnchors := akTOPLEFTRIGHT
-      :nClrPane := 0x8E762B
+      :nClrPane := clActiveBorder
+      :lTransparent := .F.
       :nBorderStyle := bvNONE
-      :nClrBar := 0x11A83F
-      :nValue := 100
+      :nClrBar := 0x15D04E
+      :nValue := 75
       :Create()
    END
 

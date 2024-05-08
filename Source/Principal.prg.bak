@@ -31,9 +31,11 @@ CLASS TPrincipal FROM TForm
 
    COMPONENT oProvidersPage
    COMPONENT oProvidersPageTitle
+
    COMPONENT oStatsPage
-   COMPONENT oSettingsPage
    COMPONENT oStatsPageTitle
+
+   COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
 
    METHOD CreateForm()

@@ -37,7 +37,6 @@ CLASS TPrincipal FROM TForm
 
    COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
-   COMPONENT oProgressBarMod1
    COMPONENT oProgressBarMod2
 
    METHOD CreateForm()

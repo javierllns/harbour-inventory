@@ -169,7 +169,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :SetBounds( 230, 54, 554, 507 )
       :nAlign := alCLIENT
       :nAlignMarginTop := 4
-      :nIndex := 5
+      :nIndex := 1
       ::oWelcomePage := TPage():Create( ::oPages )
 
       ::oProductsPage := TPage():Create( ::oPages )
@@ -184,17 +184,10 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
          WITH OBJECT ::oWelcomePageTitle := TBanner():New( ::oWelcomePage )
-            :SetBounds( 0, 4, 554, 25 )
+            :SetBounds( 0, 0, 554, 25 )
             :cText := "Welcome"
+            :nAlign := alTOP
             :nAnchors := akTOPLEFTRIGHT
-            :Create()
-         END
-
-         WITH OBJECT ::oProgressBarMod1 := TProgressBarMod():New( ::oWelcomePage )
-            :SetBounds( 28, 112, 458, 24 )
-            :nBorderStyle := bvNONE
-            :nClrBar := 0xE7D9AF
-            :nValue := 100
             :Create()
          END
 

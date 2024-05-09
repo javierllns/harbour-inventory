@@ -11,8 +11,10 @@
 #include "Xailer.ch"
 
 CLASS TPrincipal FROM TForm
-   //Data
+   //Data sources
    COMPONENT oMariaDB
+   //Querys "Data sets"
+   COMPONENT oGetAllProducts
 
    //GUI
    COMPONENT cTitle
@@ -86,7 +88,8 @@ RETURN Nil
 //------------------------------------------------------------------------------
 
 METHOD CheckMariaDBConnection( oSender ) CLASS TPrincipal
-   MsgInfo(::oMariaDB:lConnected)
+   //MsgInfo(::oMariaDB:lConnected)
+   ::oGetAllProducts:lOpen = .T.
 RETURN Nil
 
 //------------------------------------------------------------------------------

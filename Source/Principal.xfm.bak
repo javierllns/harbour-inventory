@@ -20,6 +20,14 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :Create()
    END
 
+   WITH OBJECT ::oGetAllProducts := TSQLQuery():New( Self )
+      :oDataSource := ::oMariaDB
+      :cProcess := "GENERAL"
+      :nMaxRecords := 20
+      :cSelect := "SELECT sku, name, description, stock_quantity, upc, price, usd_price, provider_id FROM products;"
+      :Create()
+   END
+
    WITH OBJECT ::cTitle := TBanner():New( Self )
       :SetBounds( 0, 0, 736, 50 )
       :cText := "SEA-INVENTORY"
@@ -281,6 +289,8 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
                END
 
                :nRowHeight := 21
+               :lHideScrollBars := .F.
+               :oDataSet := ::oGetAllProducts
                :Create()
             END
 

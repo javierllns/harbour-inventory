@@ -228,9 +228,58 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-            WITH OBJECT ::oDbBrowseMod1 := TDbBrowseMod():New( ::oProductsPageContainer )
+            WITH OBJECT ::oProductsTable := TDbBrowseMod():New( ::oProductsPageContainer )
                :SetBounds( 4, 92, 530, 386 )
+               :nAnchors := akALL
                :nBorderStyle := bvNONE
+               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                  :cHeader := "SKU"
+                  :oDataField := "(TDataField)"
+                  :Create()
+               END
+
+               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                  :cHeader := "Name"
+                  :oDataField := "(TDataField)"
+                  :Create()
+               END
+
+               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                  :cHeader := "Description"
+                  :oDataField := "(TDataField)"
+                  :Create()
+               END
+
+               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                  :cHeader := "Stock Quantity"
+                  :oDataField := "(TDataField)"
+                  :Create()
+               END
+
+               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                  :cHeader := "UPC Code"
+                  :oDataField := "(TDataField)"
+                  :Create()
+               END
+
+               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                  :cHeader := "Price"
+                  :oDataField := "(TDataField)"
+                  :Create()
+               END
+
+               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                  :cHeader := "USD Price"
+                  :oDataField := "(TDataField)"
+                  :Create()
+               END
+
+               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                  :cHeader := "Provider ID"
+                  :oDataField := "(TDataField)"
+                  :Create()
+               END
+
                :nRowHeight := 21
                :Create()
             END

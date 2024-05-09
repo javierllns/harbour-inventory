@@ -45,7 +45,7 @@ CLASS TPrincipal FROM TForm
    COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
    COMPONENT oSettingsPageContainer
-   COMPONENT oDbBrowseMod1
+   COMPONENT oProductsTable
    COMPONENT oButton1
 
    //Handlers

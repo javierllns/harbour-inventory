@@ -254,60 +254,66 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
                :Create()
             END
 
-                  WITH OBJECT ::oButton1 := TButton():New( ::oProductsPageTab1 )
-                     :SetBounds( 16, 24, 80, 25 )
-                     :cText := "Button1"
+                  WITH OBJECT ::oProductsPageTab1_SearchAllButton := TButtonMod():New( ::oProductsPageTab1 )
+                     :SetBounds( 416, 0, 110, 32 )
+                     :cText := "Search All"
+                     :lParentFont := .F.
+                     :oFont := TFont():Create( "Tahoma", 8, 0, 700 )
+                     :nClrText := clWhite
+                     :nClrPane := 0x8E762B
+                     :nBorderRadius := 3
+                     :nClrBorder := 0x8E762B
                      :OnClick := "CheckMariaDBConnection"
                      :Create()
                   END
 
-                  WITH OBJECT ::oProductsTable := TDbBrowseMod():New( ::oProductsPageTab1 )
-                     :SetBounds( 0, 76, 530, 375 )
+                  WITH OBJECT ::oProductsPageTab1_ProductsTable := TDbBrowseMod():New( ::oProductsPageTab1 )
+                     :SetBounds( 0, 44, 530, 407 )
                      :nAnchors := akALL
                      :nBorderStyle := bvNONE
-                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "SKU"
                         :oDataField := "sku"
                         :Create()
                      END
 
-                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "Name"
                         :oDataField := "name"
                         :Create()
                      END
 
-                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "Description"
                         :oDataField := "description"
                         :Create()
                      END
 
-                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "Stock Quantity"
                         :oDataField := "stock_quantity"
                         :Create()
                      END
 
-                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "UPC Code"
                         :oDataField := "upc"
                         :Create()
                      END
 
-                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "Price"
                         :oDataField := "price"
                         :Create()
                      END
 
-                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "USD Price"
                         :oDataField := "usd_price"
                         :Create()
                      END
 
-                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "Provider ID"
                         :oDataField := "provider_id"
                         :Create()

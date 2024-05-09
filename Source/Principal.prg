@@ -36,11 +36,9 @@ CLASS TPrincipal FROM TForm
    COMPONENT oProductsPageTitle
    COMPONENT oProductsPageContainer
    COMPONENT oProductsPageTabs
-   //ProductsPage Tab 1
    COMPONENT oProductsPageTab1
-   COMPONENT oButton1
-   COMPONENT oProductsTable
-   //ProductsPage Tab 2
+   COMPONENT oProductsPageTab1_SearchAllButton
+   COMPONENT oProductsPageTab1_ProductsTable
    COMPONENT oProductsPageTab2
 
    COMPONENT oProvidersPage

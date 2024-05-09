@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 415, 119, 802, 625 )
+      ::SetBounds( 614, 81, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -11,7 +11,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    ENDIF
    ::Super:CreateForm( .F. )
 
-   WITH OBJECT ::oMariaDBDataSource := TMariaDBDataSource():New( Self )
+   WITH OBJECT ::oMariaDB := TMariaDBDataSource():New( Self )
       :cHost := "localhost"
       :cUser := "root"
       :cPassword := "1234"

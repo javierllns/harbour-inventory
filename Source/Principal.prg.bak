@@ -12,7 +12,7 @@
 
 CLASS TPrincipal FROM TForm
    //Data
-   COMPONENT oMariaDBDataSource
+   COMPONENT oMariaDB
 
    //GUI
    COMPONENT cTitle
@@ -86,7 +86,7 @@ RETURN Nil
 //------------------------------------------------------------------------------
 
 METHOD CheckMariaDBConnection( oSender ) CLASS TPrincipal
-   MsgInfo(::oMariaDBDataSource:lConnected)
+   MsgInfo(::oMariaDB:lConnected)
 RETURN Nil
 
 //------------------------------------------------------------------------------

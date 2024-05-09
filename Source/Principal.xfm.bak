@@ -237,7 +237,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
          END
 
             WITH OBJECT ::oTabsFolder1 := TTabsFolder():New( ::oProductsPageContainer )
-               :SetBounds( 4, 4, 530, 474 )
+               :SetBounds( 4, 3, 530, 475 )
                :nAnchors := akALL
                :nIndex := 1
                :cText := "TabsFolder1"
@@ -267,7 +267,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
                   END
 
                   WITH OBJECT ::oProductsTable := TDbBrowseMod():New( ::oTabsFolderPage1 )
-                     :SetBounds( 0, 76, 530, 374 )
+                     :SetBounds( 0, 76, 530, 375 )
                      :nAnchors := akALL
                      :nBorderStyle := bvNONE
                      WITH OBJECT TDbBrwColMod():New( ::oProductsTable )

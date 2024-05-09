@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 488, 114, 802, 625 )
+      ::SetBounds( 533, 120, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -236,37 +236,32 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-            WITH OBJECT ::oTabsFolder1 := TTabsFolder():New( ::oProductsPageContainer )
+            WITH OBJECT ::oProductsPageTabs := TTabsFolder():New( ::oProductsPageContainer )
                :SetBounds( 4, 3, 530, 475 )
                :nAnchors := akALL
                :nIndex := 1
-               :cText := "TabsFolder1"
-               WITH OBJECT ::oTabsFolderPage1 := TTabsFolderPage():New( ::oTabsFolder1 )
-                  :cText := "Tab1"
+               :cText := "ProductsPageTabs"
+               WITH OBJECT ::oProductsPageTab1 := TTabsFolderPage():New( ::oProductsPageTabs )
+                  :cText := "Search"
                   :Create()
                END
 
-               WITH OBJECT ::oTabsFolderPage2 := TTabsFolderPage():New( ::oTabsFolder1 )
-                  :cText := "Tab2"
-                  :Create()
-               END
-
-               WITH OBJECT ::oTabsFolderPage3 := TTabsFolderPage():New( ::oTabsFolder1 )
-                  :cText := "Tab3"
+               WITH OBJECT ::oProductsPageTab2 := TTabsFolderPage():New( ::oProductsPageTabs )
+                  :cText := "Add"
                   :Create()
                END
 
                :Create()
             END
 
-                  WITH OBJECT ::oButton1 := TButton():New( ::oTabsFolderPage1 )
+                  WITH OBJECT ::oButton1 := TButton():New( ::oProductsPageTab1 )
                      :SetBounds( 16, 24, 80, 25 )
                      :cText := "Button1"
                      :OnClick := "CheckMariaDBConnection"
                      :Create()
                   END
 
-                  WITH OBJECT ::oProductsTable := TDbBrowseMod():New( ::oTabsFolderPage1 )
+                  WITH OBJECT ::oProductsTable := TDbBrowseMod():New( ::oProductsPageTab1 )
                      :SetBounds( 0, 76, 530, 375 )
                      :nAnchors := akALL
                      :nBorderStyle := bvNONE

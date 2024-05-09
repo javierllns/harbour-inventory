@@ -60,7 +60,7 @@ CLASS TPrincipal FROM TForm
    METHOD oNavigateToProviders( oSender )
    METHOD oNavigateToStats( oSender )
    METHOD oNavigateToSettings( oSender )
-   METHOD CheckMariaDBConnection( oSender )
+   METHOD handleGetAllProducts( oSender )
 
 ENDCLASS
 
@@ -90,9 +90,15 @@ RETURN Nil
 
 //------------------------------------------------------------------------------
 
-METHOD CheckMariaDBConnection( oSender ) CLASS TPrincipal
-   //MsgInfo(::oMariaDB:lConnected)
+METHOD handleGetAllProducts( oSender ) CLASS TPrincipal
+   ::oProgressBar:nValue = 50
+
+   ::oGetAllProducts:lOpen = .F.
    ::oGetAllProducts:lOpen = .T.
+
+   ::oProgressBar:nValue = 75
+   ::oProgressBar:nValue = 100
+   ::oProgressBar:nValue = 0
 RETURN Nil
 
 //------------------------------------------------------------------------------

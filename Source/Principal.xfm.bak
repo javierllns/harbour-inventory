@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 533, 120, 802, 625 )
+      ::SetBounds( 479, 112, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -57,7 +57,6 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :lTransparent := .F.
       :nBorderStyle := bvNONE
       :nClrBar := 0x15D04E
-      :nValue := 75
       :Create()
    END
 
@@ -266,7 +265,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
                      :nClrPane := 0x8E762B
                      :nBorderRadius := 3
                      :nClrBorder := 0x8E762B
-                     :OnClick := "CheckMariaDBConnection"
+                     :OnClick := "handleGetAllProducts"
                      :Create()
                   END
 

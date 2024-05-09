@@ -242,7 +242,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
                :nBorderStyle := bvNONE
                WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
                   :cHeader := "SKU"
-                  :oDataField := "(TDataField)"
+                  :oDataField := "sku"
                   :Create()
                END
 

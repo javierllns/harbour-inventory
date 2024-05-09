@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 1880, 62, 802, 625 )
+      ::SetBounds( 488, 114, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -236,70 +236,93 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             :Create()
          END
 
-            WITH OBJECT ::oProductsTable := TDbBrowseMod():New( ::oProductsPageContainer )
-               :SetBounds( 4, 92, 530, 386 )
+            WITH OBJECT ::oTabsFolder1 := TTabsFolder():New( ::oProductsPageContainer )
+               :SetBounds( 4, 3, 530, 475 )
                :nAnchors := akALL
-               :nBorderStyle := bvNONE
-               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
-                  :cHeader := "SKU"
-                  :oDataField := "sku"
+               :nIndex := 1
+               :cText := "TabsFolder1"
+               WITH OBJECT ::oTabsFolderPage1 := TTabsFolderPage():New( ::oTabsFolder1 )
+                  :cText := "Tab1"
                   :Create()
                END
 
-               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
-                  :cHeader := "Name"
-                  :oDataField := "name"
+               WITH OBJECT ::oTabsFolderPage2 := TTabsFolderPage():New( ::oTabsFolder1 )
+                  :cText := "Tab2"
                   :Create()
                END
 
-               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
-                  :cHeader := "Description"
-                  :oDataField := "description"
+               WITH OBJECT ::oTabsFolderPage3 := TTabsFolderPage():New( ::oTabsFolder1 )
+                  :cText := "Tab3"
                   :Create()
                END
 
-               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
-                  :cHeader := "Stock Quantity"
-                  :oDataField := "stock_quantity"
-                  :Create()
-               END
-
-               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
-                  :cHeader := "UPC Code"
-                  :oDataField := "upc"
-                  :Create()
-               END
-
-               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
-                  :cHeader := "Price"
-                  :oDataField := "price"
-                  :Create()
-               END
-
-               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
-                  :cHeader := "USD Price"
-                  :oDataField := "usd_price"
-                  :Create()
-               END
-
-               WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
-                  :cHeader := "Provider ID"
-                  :oDataField := "provider_id"
-                  :Create()
-               END
-
-               :nRowHeight := 21
-               :lHideScrollBars := .F.
-               :oDataSet := ::oGetAllProducts
                :Create()
             END
 
-            WITH OBJECT ::oButton1 := TButton():New( ::oProductsPageContainer )
-               :SetBounds( 20, 32, 80, 25 )
-               :cText := "Button1"
-               :OnClick := "CheckMariaDBConnection"
-               :Create()
-            END
+                  WITH OBJECT ::oButton1 := TButton():New( ::oTabsFolderPage1 )
+                     :SetBounds( 16, 24, 80, 25 )
+                     :cText := "Button1"
+                     :OnClick := "CheckMariaDBConnection"
+                     :Create()
+                  END
+
+                  WITH OBJECT ::oProductsTable := TDbBrowseMod():New( ::oTabsFolderPage1 )
+                     :SetBounds( 0, 76, 530, 375 )
+                     :nAnchors := akALL
+                     :nBorderStyle := bvNONE
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                        :cHeader := "SKU"
+                        :oDataField := "sku"
+                        :Create()
+                     END
+
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                        :cHeader := "Name"
+                        :oDataField := "name"
+                        :Create()
+                     END
+
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                        :cHeader := "Description"
+                        :oDataField := "description"
+                        :Create()
+                     END
+
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                        :cHeader := "Stock Quantity"
+                        :oDataField := "stock_quantity"
+                        :Create()
+                     END
+
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                        :cHeader := "UPC Code"
+                        :oDataField := "upc"
+                        :Create()
+                     END
+
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                        :cHeader := "Price"
+                        :oDataField := "price"
+                        :Create()
+                     END
+
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                        :cHeader := "USD Price"
+                        :oDataField := "usd_price"
+                        :Create()
+                     END
+
+                     WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
+                        :cHeader := "Provider ID"
+                        :oDataField := "provider_id"
+                        :Create()
+                     END
+
+                     :nRowHeight := 21
+                     :lHideScrollBars := .F.
+                     :oDataSet := ::oGetAllProducts
+                     :Create()
+                  END
 
          WITH OBJECT ::oProvidersPageTitle := TLabel():New( ::oProvidersPage )
             :SetBounds( 9, 9, 77, 24 )

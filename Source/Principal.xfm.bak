@@ -275,7 +275,9 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
                      :nAnchors := akALL
                      :lParentFont := .F.
                      :oFont := TFont():Create( "Tahoma", 8, 0, 400 )
+                     :cTooltipTitle := "Products"
                      :nBorderStyle := bvNONE
+                     :cMessage := "Products"
                      WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "SKU"
                         :oDataField := "sku"
@@ -296,6 +298,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
 
                      WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "Stock Quantity"
+                        :nDataAlignment := taCENTER
                         :oDataField := "stock_quantity"
                         :Create()
                      END
@@ -308,24 +311,29 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
 
                      WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "Price"
+                        :nDataAlignment := taRIGHT
                         :oDataField := "price"
                         :Create()
                      END
 
                      WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "USD Price"
+                        :nDataAlignment := taRIGHT
                         :oDataField := "usd_price"
                         :Create()
                      END
 
                      WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "Provider ID"
+                        :nDataAlignment := taRIGHT
                         :oDataField := "provider_id"
                         :Create()
                      END
 
-                     :nRowHeight := 30
+                     :nHeaderHeight := 30
+                     :nRowHeight := 25
                      :nClrHeaderDivider := clWhite
+                     :lSupraHeader := .T.
                      :lShowCellSelected := .T.
                      :lHideScrollBars := .F.
                      :lAllowSort := .T.

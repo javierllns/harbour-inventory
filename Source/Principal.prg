@@ -11,8 +11,8 @@
 #include "Xailer.ch"
 
 CLASS TPrincipal FROM TForm
-   //Data sources
-   COMPONENT oMariaDB
+   //Data
+   COMPONENT oMariaDBDataSource
 
    //GUI
    COMPONENT cTitle

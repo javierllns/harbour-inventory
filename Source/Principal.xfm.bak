@@ -239,6 +239,8 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             WITH OBJECT ::oProductsPageTabs := TTabsFolder():New( ::oProductsPageContainer )
                :SetBounds( 4, 3, 530, 475 )
                :nAnchors := akALL
+               :lParentFont := .F.
+               :oFont := TFont():Create( "Tahoma", 11, 0, 400 )
                :nIndex := 1
                :cText := "ProductsPageTabs"
                WITH OBJECT ::oProductsPageTab1 := TTabsFolderPage():New( ::oProductsPageTabs )
@@ -255,8 +257,9 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
             END
 
                   WITH OBJECT ::oProductsPageTab1_SearchAllButton := TButtonMod():New( ::oProductsPageTab1 )
-                     :SetBounds( 8, 20, 110, 32 )
+                     :SetBounds( 416, 0, 110, 32 )
                      :cText := "Search All"
+                     :nAnchors := akTOPRIGHT
                      :lParentFont := .F.
                      :oFont := TFont():Create( "Tahoma", 8, 0, 700 )
                      :nClrText := clWhite
@@ -268,8 +271,10 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
                   END
 
                   WITH OBJECT ::oProductsPageTab1_ProductsTable := TDbBrowseMod():New( ::oProductsPageTab1 )
-                     :SetBounds( 0, 76, 530, 375 )
+                     :SetBounds( 0, 44, 530, 407 )
                      :nAnchors := akALL
+                     :lParentFont := .F.
+                     :oFont := TFont():Create( "Tahoma", 8, 0, 400 )
                      :nBorderStyle := bvNONE
                      WITH OBJECT TDbBrwColMod():New( ::oProductsPageTab1_ProductsTable )
                         :cHeader := "SKU"
@@ -319,8 +324,12 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
                         :Create()
                      END
 
-                     :nRowHeight := 21
+                     :nRowHeight := 30
+                     :nClrHeaderDivider := clWhite
+                     :lShowCellSelected := .T.
                      :lHideScrollBars := .F.
+                     :lAllowSort := .T.
+                     :lAlternateColor := .T.
                      :oDataSet := ::oGetAllProducts
                      :Create()
                   END

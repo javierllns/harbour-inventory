@@ -35,6 +35,13 @@ CLASS TPrincipal FROM TForm
    COMPONENT oProductsPage
    COMPONENT oProductsPageTitle
    COMPONENT oProductsPageContainer
+   COMPONENT oProductsPageTabs
+   //ProductsPage Tab 1
+   COMPONENT oProductsPageTab1
+   COMPONENT oButton1
+   COMPONENT oProductsTable
+   //ProductsPage Tab 2
+   COMPONENT oProductsPageTab2
 
    COMPONENT oProvidersPage
    COMPONENT oProvidersPageTitle
@@ -47,11 +54,6 @@ CLASS TPrincipal FROM TForm
    COMPONENT oSettingsPage
    COMPONENT oSettingsPageTitle
    COMPONENT oSettingsPageContainer
-   COMPONENT oProductsTable
-   COMPONENT oButton1
-   COMPONENT oProductsPageTabs
-   COMPONENT oProductsPageTab1
-   COMPONENT oProductsPageTab2
 
    //Handlers
    METHOD CreateForm()

@@ -248,43 +248,43 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
 
                WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
                   :cHeader := "Name"
-                  :oDataField := "(TDataField)"
+                  :oDataField := "name"
                   :Create()
                END
 
                WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
                   :cHeader := "Description"
-                  :oDataField := "(TDataField)"
+                  :oDataField := "description"
                   :Create()
                END
 
                WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
                   :cHeader := "Stock Quantity"
-                  :oDataField := "(TDataField)"
+                  :oDataField := "stock_quantity"
                   :Create()
                END
 
                WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
                   :cHeader := "UPC Code"
-                  :oDataField := "(TDataField)"
+                  :oDataField := "upc"
                   :Create()
                END
 
                WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
                   :cHeader := "Price"
-                  :oDataField := "(TDataField)"
+                  :oDataField := "price"
                   :Create()
                END
 
                WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
                   :cHeader := "USD Price"
-                  :oDataField := "(TDataField)"
+                  :oDataField := "usd_price"
                   :Create()
                END
 
                WITH OBJECT TDbBrwColMod():New( ::oProductsTable )
                   :cHeader := "Provider ID"
-                  :oDataField := "(TDataField)"
+                  :oDataField := "provider_id"
                   :Create()
                END
 

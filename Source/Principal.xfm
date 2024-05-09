@@ -1,7 +1,7 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 614, 81, 802, 625 )
+      ::SetBounds( 1880, 62, 802, 625 )
       ::SetClientSize( 786, 586 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
@@ -195,7 +195,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :SetBounds( 230, 54, 556, 532 )
       :nAlign := alCLIENT
       :nAlignMarginTop := 4
-      :nIndex := 1
+      :nIndex := 2
       ::oWelcomePage := TPage():Create( ::oPages )
 
       ::oProductsPage := TPage():Create( ::oPages )

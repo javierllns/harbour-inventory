@@ -1,8 +1,8 @@
 METHOD CreateForm( lCreate ) CLASS TPrincipal
 
    IF lCreate
-      ::SetBounds( 415, 119, 802, 625 )
-      ::SetClientSize( 786, 586 )
+      ::SetBounds( 0, 832, 160, 28 )
+      ::SetClientSize( 0, 0 )
       ::cText := "Principal"
       ::nClrPane := 0x8E762B
       ::nMinWidth := 800
@@ -11,7 +11,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    ENDIF
    ::Super:CreateForm( .F. )
 
-   WITH OBJECT ::oMariaDBDataSource := TMariaDBDataSource():New( Self )
+   WITH OBJECT ::oMariaDB := TMariaDBDataSource():New( Self )
       :cHost := "localhost"
       :cUser := "root"
       :cPassword := "1234"
@@ -21,7 +21,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::cTitle := TBanner():New( Self )
-      :SetBounds( 0, 0, 736, 50 )
+      :SetBounds( 0, 0, 180, 50 )
       :cText := "SEA-INVENTORY"
       :nAlign := alTOP
       :nAlignMarginRight := 50
@@ -34,7 +34,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::oTitleImage := TImage():New( Self )
-      :SetBounds( 734, 0, 54, 50 )
+      :SetBounds( 178, 0, 54, 50 )
       :nAnchors := akTOPRIGHT
       :oPicture := "sea-boxes-light.png"
       :nBorderSides := bsNONE
@@ -43,7 +43,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::oProgressBar := TProgressBarMod():New( Self )
-      :SetBounds( 0, 50, 786, 4 )
+      :SetBounds( 0, 50, 230, 4 )
       :nAnchors := akTOPLEFTRIGHT
       :nClrPane := clActiveBorder
       :lTransparent := .F.
@@ -54,7 +54,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
    END
 
    WITH OBJECT ::oNavPanel := TShiftPanel():New( Self )
-      :SetBounds( 0, 54, 230, 532 )
+      :SetBounds( 0, 54, 230, 0 )
       :cText := "Navigation"
       :nAlignMarginTop := 4
       :lParentFont := .F.
@@ -184,7 +184,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       END
 
    WITH OBJECT ::oPages := TPages():New( Self )
-      :SetBounds( 230, 54, 556, 532 )
+      :SetBounds( 230, 54, 0, 0 )
       :nAlign := alCLIENT
       :nAlignMarginTop := 4
       :nIndex := 1

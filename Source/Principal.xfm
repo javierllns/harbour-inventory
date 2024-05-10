@@ -7,6 +7,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       ::nClrPane := 0x8E762B
       ::nMinWidth := 800
       ::nMinHeight := 600
+      ::lMsgAuto := .T.
       ::Create()
    ENDIF
    ::Super:CreateForm( .F. )
@@ -20,11 +21,10 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :Create()
    END
 
-   WITH OBJECT ::oGetAllProducts := TSQLQuery():New( Self )
+   WITH OBJECT ::oProducts := TSQLQuery():New( Self )
       :oDataSource := ::oMariaDB
       :cProcess := "GENERAL"
-      :nMaxRecords := 20
-      :cSelect := "SELECT sku, name, description, stock_quantity, upc, price, usd_price, provider_id FROM products;"
+      :cSelect := ""
       :Create()
    END
 
@@ -337,7 +337,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
                      :lHideScrollBars := .F.
                      :lAllowSort := .T.
                      :lAlternateColor := .T.
-                     :oDataSet := ::oGetAllProducts
+                     :oDataSet := ::oProducts
                      :Create()
                   END
 

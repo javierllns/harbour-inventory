@@ -14,7 +14,7 @@ CLASS TPrincipal FROM TForm
    //Data sources
    COMPONENT oMariaDB
    //Querys "Data sets"
-   COMPONENT oGetAllProducts
+   COMPONENT oProducts
 
    //GUI
    COMPONENT cTitle
@@ -93,8 +93,9 @@ RETURN Nil
 METHOD handleGetAllProducts( oSender ) CLASS TPrincipal
    ::oProgressBar:nValue = 50
 
-   ::oGetAllProducts:lOpen = .F.
-   ::oGetAllProducts:lOpen = .T.
+   ::oProducts:cSelect = "SELECT sku, name, description, stock_quantity, upc, price, usd_price, provider_id FROM products;"
+   ::oProducts:Close()
+   ::oProducts:Open()
 
    ::oProgressBar:nValue = 75
    ::oProgressBar:nValue = 100

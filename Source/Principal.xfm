@@ -194,7 +194,7 @@ METHOD CreateForm( lCreate ) CLASS TPrincipal
       :SetBounds( 230, 54, 556, 532 )
       :nAlign := alCLIENT
       :nAlignMarginTop := 4
-      :nIndex := 2
+      :nIndex := 1
       ::oWelcomePage := TPage():Create( ::oPages )
 
       ::oProductsPage := TPage():Create( ::oPages )

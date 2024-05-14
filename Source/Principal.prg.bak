@@ -101,7 +101,6 @@ METHOD handleGetAllProductsProgressAnimation( oSender ) CLASS TPrincipal
       ::oProducts:Open()
 
       ::oProgressBar:nValue = 100
-
       ::oProgressBar:nValue = 0
    ENDIF
 RETURN Nil

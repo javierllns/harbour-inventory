@@ -61,7 +61,7 @@ CLASS TPrincipal FROM TForm
    METHOD oNavigateToStats( oSender )
    METHOD oNavigateToSettings( oSender )
    METHOD handleGetAllProducts( oSender )
-
+   METHOD handleGetAllProductsProgressAnimation( oSender )
 ENDCLASS
 
 #include "Principal.xfm"
@@ -89,17 +89,31 @@ METHOD oNavigateToSettings( oSender ) CLASS TPrincipal
 RETURN Nil
 
 //------------------------------------------------------------------------------
+METHOD handleGetAllProductsProgressAnimation( oSender ) CLASS TPrincipal
+   IF ::oProgressBar:nValue <= 50
+      ::oProgressBar:nValue += 10
+   ELSE
+      oSender:Disable()
+      oSender:Destroy()
+
+      ::oProducts:cSelect = "SELECT sku, name, description, stock_quantity, upc, price, usd_price, provider_id FROM products;"
+      ::oProducts:Close()
+      ::oProducts:Open()
+
+      ::oProgressBar:nValue = 100
+      ::oProgressBar:nValue = 0
+   ENDIF
+RETURN Nil
 
 METHOD handleGetAllProducts( oSender ) CLASS TPrincipal
-   ::oProgressBar:nValue = 50
+   LOCAL oTimer := TTimer():New( Self )
+   oTimer:nInterval := 1
+   oTimer:OnTimer := "handleGetAllProductsProgressAnimation"
+   oTimer:Create()
 
-   ::oProducts:cSelect = "SELECT sku, name, description, stock_quantity, upc, price, usd_price, provider_id FROM products;"
-   ::oProducts:Close()
-   ::oProducts:Open()
-
-   ::oProgressBar:nValue = 75
-   ::oProgressBar:nValue = 100
    ::oProgressBar:nValue = 0
+
+   oTimer:Enable()
 RETURN Nil
 
 //------------------------------------------------------------------------------
